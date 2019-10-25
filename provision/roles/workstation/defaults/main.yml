@@ -1,0 +1,8 @@
+ppa_list:
+  - ppa:linuxuprising/shutter
+  - ppa:diodon-team/stable
+  - ppa:openrazer/stable
+  - ppa:yubico/stable
+
+
+

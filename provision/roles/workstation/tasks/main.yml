@@ -1,0 +1,41 @@
+---
+- name: Remove not used stuff
+  apt:
+    name: "{{ packages }}"
+    state: absent
+  vars:
+    packages:
+      - nano
+
+- name: Add additional PPA
+  apt_repository:
+    repo: "{{ item }}"
+  with_items: "{{ ppa_list }}"
+
+- name: Upgrade all packages to the latest version
+  apt:
+    update_cache: yes
+    name: "*"
+    state: latest
+
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+
+- name: Install useful packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - htop
+      - iotop
+      - lsof
+      - mc
+      - openrazer-meta
+      - pandoc
+      - qalculate-gtk
+      - shutter
+      - tcpdump
+      - vim
+
+
