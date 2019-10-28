@@ -29,6 +29,7 @@
     packages:
       - htop
       - iotop
+      - lastpass-cli
       - lsof
       - mc
       - openrazer-meta
